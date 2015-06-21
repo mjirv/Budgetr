@@ -1,0 +1,23 @@
+extends layout
+
+block header
+	p Welcome to Budgetr
+
+block content
+	// WRAPPER
+	#wrapper
+
+		// LINE ITEM LIST
+		h2 Accounts
+		p
+			i Click on account name to view expenses
+		#lineItemList
+			table
+				thead
+					th Name
+					th Starting
+					th Remaining
+				tbody
+		// /LINE ITEM LIST
+
+	// /WRAPPER
