@@ -1,0 +1,52 @@
+extends layout
+
+block content
+	// WRAPPER
+	#wrapper
+
+		// ADD EXPENSE
+		h2 Add Expense Info
+		#addExpense
+			form
+				fieldset
+					label(for='accountName') Account 
+					input#accountName(list='accounts')
+					datalist#accounts
+						each e in lineItemData
+							option(value=e)
+				br
+				fieldset
+					label(for='inputFirstName') First Name 
+					input#inputFirstName(type='text')
+					br
+					label(for='inputLastName') Last Name 
+					input#inputLastName(type='text')
+					br
+					label(for='inputEmail') Email 
+					input#inputEmail(type='text', placeholder='example@gmail.com')
+				br
+				fieldset
+					label(for='inputEventName') Event Name 
+					input#inputEventName(type='text')
+					br
+					label(for='inputEventDate') Date of Event 
+					input#inputEventDate(type='date')
+				br
+				fieldset
+					label(for='inputExpenseName') Expense Name 
+					input#inputExpenseName(type='text')
+					br
+					label(for='inputExpenseAmount') Expense Amount 
+					input#inputExpenseAmount(type='number', placeholder='1500')
+				br
+				fieldset
+					label(for='inputExpenseDescription') Expense Description 
+					textarea#inputExpenseDescription(type='textbox', placeholder='Briefly describe the expense.')
+				br					
+			input#submitExpensePOST(type='button', value='Submit')
+		// /ADD EXPENSE
+
+	// /WRAPPER
+
+block scripts
+	script(src='/javascripts/postexpense.js')

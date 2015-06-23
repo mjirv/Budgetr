@@ -12,6 +12,8 @@ var db = monk('localhost:27017/budgetr');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var lineitems = require('./routes/lineitems');
+var addExpense = require('./routes/add_expense');
+var added = require('./routes/added');
 
 var app = express();
 
@@ -36,6 +38,8 @@ app.use(function(req, res, next) {
 app.use('/', routes);
 app.use('/users', users);
 app.use('/lineitems', lineitems);
+app.use('/add_expense', addExpense);
+app.use('/added', added);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

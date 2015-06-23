@@ -1,0 +1,39 @@
+extends layout
+
+block header
+	p Successfully Submitted Expense
+
+block content
+	// WRAPPER
+	#wrapper
+
+		// SHOW EXPENSE DATA
+		h2 Expense
+		div#expenseContainer
+			strong Account: 
+			span= data.account
+			br
+			strong Name: 
+			span= data.user.firstName + " "
+			span= data.user.lastName
+			br
+			strong Email: 
+			span= data.user.email
+			br
+			strong Event Name: 
+			span= data.event.name
+			br
+			strong Event Date: 
+			span= data.event.date
+			br
+			strong Expense Name: 
+			span= data.expense.name
+			br
+			strong Expense Amount: 
+			span= '$' + data.expense.amount
+			br
+			strong Expense Description: 
+			span= data.expense.description
+		// /SHOW EXPENSE
+
+	// /WRAPPER

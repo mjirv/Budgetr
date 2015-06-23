@@ -1,21 +1,25 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+	head
+		title= title
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+		link(rel='stylesheet', href='/stylesheets/style.css')
 
-  body
-    h1= title
-    block header
-    // MENU
-    #menu
-        ul
-            li
-                a(href="/") Home
-            li
-                a(href="add") Add Expense
-    // /MENU
-    block content
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
-    script(src='/javascripts/global.js')
+	body
+		h1= 'Budgetr'
+		block header
+		// MENU
+		#menu
+			ul
+				li
+					a(href="/") Home
+				li
+					a(href="add_expense") Add Expense
+				li
+					a(href="admin") Administrator
+		// /MENU
+		block content
+
+	script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+	script(src='/javascripts/global.js')
+	block scripts
