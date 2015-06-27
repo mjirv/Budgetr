@@ -1,12 +1,10 @@
 var express = require('express');
 var router = express.Router();	// Database
-var mongo = require('mongodb');
-var monk = require('monk');
-var db = monk('localhost:27017/budgetr');
-var collection = db.get('expenseList');
 
 /* GET added page. */
 router.get('/:id', function(req, res, next) {
+    var db = req.db;
+    var collection = db.get('expenseList');
 	var body = "";
 	collection.find({_id: req.params.id}, {}, function(e, docs) {
 		docs.forEach(function(user) {
