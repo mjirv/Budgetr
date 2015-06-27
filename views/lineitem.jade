@@ -1,0 +1,43 @@
+extends layout
+block header
+    p Line Item Viewer
+block content
+    -var expensesArray = JSON.parse(expenses);
+    // WRAPPER
+    #wrapper
+        // SHOW EXPENSE DATA
+        h3 Line Item: #{lineItem.name}
+        div#lineItemInfo
+            strong Remaining Amount: 
+            span= lineItem.remaining
+            br
+            strong Starting Amount: 
+            span= lineItem.start
+        br
+        h3 Expense Info
+        div#expenseArrayContainer
+            each expense, i in expensesArray.reverse()
+                -data=JSON.parse(expense);
+                div.expenseArrayMember
+                    h4 #{i+1}. #{data.expense.name}
+                    strong Purchaser: 
+                    span= data.user.firstName + " "
+                    span= data.user.lastName
+                    br
+                    strong Email: 
+                    span= data.user.email
+                    br
+                    strong Event Name: 
+                    span= data.event.name
+                    br
+                    strong Event Date: 
+                    span= data.event.date
+                    br
+                    strong Expense Amount: 
+                    span= '$' + data.expense.amount
+                    br
+                    strong Expense Description: 
+                    span= data.expense.description
+                br
+        // /SHOW EXPENSE
+    // /WRAPPER
